@@ -1,17 +1,39 @@
-<script>
-    import Hero from "$lib/components/Hero.svelte";
-    import { PUBLIC_SITE_NAME } from "$env/static/public";
+<script lang="ts">
+    import type { InvoiceProduct } from "$lib/scripts/types/misc";
+    import Invoice from "$lib/components/Invoice.svelte";
+
+    const dummyProducts: InvoiceProduct[] = [
+        {
+            name: "Database Management",
+            quantity: 1,
+            price: 100,
+        },
+        {
+            name: "Website Development",
+            quantity: 1,
+            price: 600,
+        },
+    ]
 </script>
 
 <svelte:head>
-    <title>Home | {PUBLIC_SITE_NAME}</title>
-    <meta property="og:title" content={`Svelte Template`}>
-    <meta property="og:description" content="Insert description here">
+    <title>Hone Invoice Builder</title>
+    <meta property="og:title" content={`Hone Invoice Builder`}>
+    <meta property="og:description" content="Create invoices with Hone Invoice Builder">
     <meta property="og:image" content="/favicon.png">
 </svelte:head>
 
-<Hero
-  pictures={[
-    "https://i.pinimg.com/originals/b4/f5/2d/b4f52d2709f32a86431ea6ed79902551.jpg",
-  ]}
+<Invoice
+    invoiceNumber="001"
+    issuedTo="John Doe"
+    dateIssued="7/3/2024"
+    companyName="Hone Services"
+    companyLogo="/assets/logo.png"
+    companyDescription="https://services.hone.lol"
+    products={dummyProducts}
+    currency="$"
+    termsAndConditions="Payment must be made within 3 days. Failure to pay within the given time will have your website closed until transaction is complete"
+    paymentInformation={[
+        "Bank: First Bank | Account Number: 3146316899"
+    ]}
 />
