@@ -1,6 +1,6 @@
 import { writable } from "svelte/store";
 
-export const theme = writable<string>("dark");
+export const theme = writable<string>("light");
 
 export let textColor = writable<string>("");
 export let descriptionColor = writable<string>("");

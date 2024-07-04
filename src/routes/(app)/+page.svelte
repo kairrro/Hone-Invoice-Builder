@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { InvoiceProduct } from "$lib/scripts/types/misc";
-    import Invoice from "$lib/components/Invoice.svelte";
+    import Invoice from "$lib/components/invoice/Invoice.svelte";
+    import Editor from "$lib/components/invoice/Editor.svelte";
 
     const dummyProducts: InvoiceProduct[] = [
         {

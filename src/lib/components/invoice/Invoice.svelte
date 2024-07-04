@@ -25,7 +25,7 @@
 </svelte:head>
 
 <div class="flex flex-col gap-6 max-w-[850px] mx-auto text-black goofy mt-4 mb-40 pb-10 rounded-xl bg-[#F8F8F8] md:mx-4">
-    <div class="flex items-start justify-between bg-[#ffffff] w-full rounded-t-xl p-8">
+    <div class="flex items-start justify-between bg-[#ffffff] w-full rounded-t-xl p-8 md:px-4">
         <div class="flex flex-col items-start gap-[6px] text-xs text-zinc-500">
             <p class="text-xl font-semibold text-black">Website Payment</p>
             <div class="flex items-center gap-6 md:flex-col md:items-start md:gap-2">
@@ -45,7 +45,7 @@
     <div class="flex flex-col mx-10 bg-[#ffffff] rounded-b-xl shadow-lg md:mx-2">
         <div class="flex flex-col">
             <div class="border-2 border-zinc-300 rounded-t-xl"></div>
-            <div class="flex items-start justify-between py-4 px-6">
+            <div class="flex items-start justify-between py-4 px-6 md:px-2">
                 <img
                     src={companyLogo}
                     alt="logo"
@@ -60,7 +60,7 @@
         </div>
 
         <div class="flex flex-col items-center justify-between rounded-lg border-[1px] border-zinc-300 mx-4 my-10">
-            <div class="grid grid-cols-4 w-full border-b-[1px] border-zinc-300 px-6 py-[12px] text-xs">
+            <div class="grid grid-cols-4 w-full border-b-[1px] border-zinc-300 px-6 py-[12px] text-xs md:px-2">
                 <p class="text-left">Name</p>
                 <p class="text-center">Quantity</p>
                 <p class="text-center">Price</p>
@@ -68,7 +68,7 @@
             </div>
 
             {#each products as product}
-                <div class="grid grid-cols-4 w-full border-b-[1px] border-zinc-300 px-6 py-[12px] text-xs">
+                <div class="grid grid-cols-4 w-full border-b-[1px] border-zinc-300 px-6 py-[12px] text-xs md:px-2">
                     <p class="text-left">{product.name}</p>
                     <p class="text-center">{product.quantity}</p>
                     <p class="text-center">{currency}{product.price.toFixed(2)}</p>
@@ -76,7 +76,7 @@
                 </div>
             {/each}
 
-            <div class="flex items-center justify-between w-full px-6 py-[12px] text-xs">
+            <div class="flex items-center justify-between w-full px-6 py-[12px] text-xs md:px-2">
                 <p class="text-left">Total</p>
                 <p class="font-semibold" >{currency}{subtotal.toFixed(2)}</p>
             </div>
